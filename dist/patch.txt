@@ -1,2 +1,5 @@
 добавить в /upload/catalog/controller/product/product.php
 $data['name'] = $product_info['name'];
+
+добавить в /upload/catalog/controller/product/manufacturer.php
+$data['name'] = $manufacturer_info['name'];
