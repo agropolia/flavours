@@ -334,22 +334,18 @@ if($cbim=='' || $cbim==null){$cbim=0;}
         <div class="no-js">
           <a class="clicker"></a>
           <div class="fl-nav-links">
-            <div class="language-currency">
-              <div class="fl-language"><?php echo $language; ?></div>
-              <div class="fl-currency"><?php echo $currency; ?></div>
-            </div>
-            
+
             <ul class="links">
-            <li><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"><?php echo $text_account; ?></a></li>
-            <li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
-            <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><?php echo $text_checkout; ?></a></li>  
+            <li><a href="<?php echo $account; ?>" rel="nofollow" title="<?php echo $text_account; ?>"><?php echo $text_account; ?></a></li>
+            <li><a href="<?php echo $wishlist; ?>" rel="nofollow" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
+            <li><a href="<?php echo $checkout; ?>" rel="nofollow" title="<?php echo $text_checkout; ?>"><?php echo $text_checkout; ?></a></li>
 
             <li class="last">
             <?php if (!$logged) { ?>
-            <a href="<?php echo $login; ?>"><?php echo $text_login; ?></a>
+            <a href="<?php echo $login; ?>" rel="nofollow"><?php echo $text_login; ?></a>
 
             <?php }  else { ?>
-            <a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a>
+            <a href="<?php echo $logout; ?>" rel="nofollow"><?php echo $text_logout; ?></a>
             <?php } ?>
             </li>
             </ul>
