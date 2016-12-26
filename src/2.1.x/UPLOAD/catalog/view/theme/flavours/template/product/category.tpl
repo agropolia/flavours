@@ -41,19 +41,7 @@
         <div id="content" class="<?php echo $class; ?> col-main"><?php //echo $content_top; ?>
       <!-- section start -->      
          <div class="pro-coloumn">
-          <article class="col-main"> 
-          <div class="category-description std">
-            <div class="item">
-            <?php if ($thumb) { ?>
-            <img src="<?php echo $thumb; ?>"> 
-            <?php }?>
-            
-            <?php /*if ($description) { ?>
-             <div><?php echo $description; ?></div> 
-            <?php }*/ ?>
-            </div>
-          </div><!-- category-description std -->
-
+          <article class="col-main">
           <?php  if ($categories) { ?>
           <div class="category-list">
           <h3><?php echo $text_refine; ?></h3>
@@ -161,15 +149,23 @@
                 </div>
                 <?php } ?>
               </div>
-              <div class="row">
-                <div class="bottom_pagination">
-                <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
-                <div class="col-sm-6 text-right"><?php echo $results; ?></div>
-                </div>
-              </div>
                 <?php } ?>
                 
           </div><!-- CATEGORY PRODUCT END -->
+
+              <div class="category-description std">
+                <div class="item">
+                <?php if ($thumb) { ?>
+                <img src="<?php echo $thumb; ?>">
+                <?php }?>
+
+                <?php if ($description) { ?>
+                 <div class="col-sm-12"><?php echo $description; ?></div>
+                <?php } ?>
+                </div>
+              </div><!-- category-description std -->
+
+
          <?php if ( !$products) { ?>
           <p><?php echo $text_empty; ?></p>
           <div class="buttons">
@@ -177,7 +173,7 @@
           </div>
           <?php } ?>
 
-   
+
           </div><!-- content -->
         </article>
       </div>    

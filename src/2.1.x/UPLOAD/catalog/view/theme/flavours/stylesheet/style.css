@@ -10955,7 +10955,7 @@ button.button span span {
 /*  custom-slider  */
 .category-description {
 	overflow: hidden;
-	padding-bottom: 10px
+	padding: 0px 25px
 }
 .category-description .container {
 	width: 100%;
