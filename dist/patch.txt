@@ -1,0 +1,2 @@
+добавить в /upload/catalog/controller/product/product.php
+$data['name'] = $product_info['name'];

@@ -24,7 +24,7 @@
     <!--container--> 
   </div>
   <div class="page-title">
-    <h2><?php echo $heading_title; ?></h2>
+    <h1><?php echo $heading_title; ?></h1>
   </div>
 </div>
 
@@ -106,7 +106,7 @@
           <?php } ?>
           
           <div class="product-shop col-sm-6 col-xs-12">
-            <div class="product-name"><h1><?php echo $heading_title; ?></h1></div>
+            <div class="product-name"><h2><?php echo $name; ?></h2></div>
 
             <?php if ($review_status) { ?>
             <div class="ratings">

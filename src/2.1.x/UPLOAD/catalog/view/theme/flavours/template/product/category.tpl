@@ -23,7 +23,7 @@
     <!--container--> 
   </div>
   <div class="page-title">
-    <h2><?php echo $heading_title; ?></h2>
+    <h1><?php echo $heading_title; ?></h1>
   </div>
 </div>
 
