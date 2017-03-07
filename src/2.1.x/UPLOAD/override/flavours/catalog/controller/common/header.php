@@ -5,7 +5,7 @@ public function preRender( $template_buffer, $template_name, &$data ) {
         if ($template_name != $this->config->get('config_template').'/template/common/header.tpl') {
             return parent::preRender( $template_buffer, $template_name, $data );
         }
-       
+
         // add new controller variables
 
             $this->load->language( 'common/header' );
@@ -15,23 +15,22 @@ public function preRender( $template_buffer, $template_name, &$data ) {
        $data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
        $data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
        $data['compare'] = $this->url->link('product/compare');
-
        $this->load->model('catalog/category');
        $this->load->model('catalog/product');
 
-       
+
 
             $data['categories1'] = array();
         $this->load->model('tool/image');
         $categories_1 = $this->model_catalog_category->getCategories(0);
-          
+
           foreach ($categories_1 as $category_1) {
             if($category_1['top']){
              $level_2_data = array();
-             
+
              $categories_2 = $this->model_catalog_category->getCategories($category_1['category_id']);
-             
-             
+
+
              foreach ($categories_2 as $category_2) {
                 if(!empty($category_2['image'])){
                   $subcatimage = $category_2['image'];
@@ -41,9 +40,9 @@ public function preRender( $template_buffer, $template_name, &$data ) {
                 }
 
                 $level_3_data = array();
-                
+
                 $categories_3 = $this->model_catalog_category->getCategories($category_2['category_id']);
-                
+
                 foreach ($categories_3 as $category_3) {
                    $level_3_data[] = array(
                       'name' => $category_3['name'],
@@ -52,16 +51,16 @@ public function preRender( $template_buffer, $template_name, &$data ) {
                       'category_id'=> $category_3['category_id']
                    );
                 }
-                
+
                 $level_2_data[] = array(
                    'name'     => $category_2['name'],
                    'children' => $level_3_data,
                    'href'     => $this->url->link('product/category', 'path=' . $category_1['category_id'] . '_' . $category_2['category_id']),
                    'thumb'    => $thumb,
-                   'category_id'=> $category_2['category_id']   
-                );               
+                   'category_id'=> $category_2['category_id']
+                );
              }
-             
+
              $data['categories1'][] = array(
                 'name'     => $category_1['name'],
                 'children' => $level_2_data,
@@ -72,7 +71,17 @@ public function preRender( $template_buffer, $template_name, &$data ) {
               //echo "<pre>";print_r($level_2_data);
             }
           }
+
+
+        $data['informations'] = array();
+        $infos = $this->model_catalog_information->getInformations();
         // call parent method
+        foreach ($infos as $result) {
+            $data['informations'][] = array(
+                'title' => $result['title'],
+                'href' => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+            );
+        }
 
         return parent::preRender( $template_buffer, $template_name, $data );
     }
