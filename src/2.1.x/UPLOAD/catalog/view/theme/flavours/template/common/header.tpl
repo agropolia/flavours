@@ -310,11 +310,14 @@ if($cbim=='' || $cbim==null){$cbim=0;}
       </li>
     <?php } ?>
 
-    <?php foreach ($informations as $information) { ?>
-        <li class="mega-menu"><a class="level-top <?php if(basename($information['href'])==basename($_SERVER['REQUEST_URI']) ) {echo 'active';}?>" href="<?php echo $information['href']; ?>"><span><?php echo $information['title']; ?></span></a></li>
-    <?php } ?>
+        <li class="mega-menu"><a
+                    class="level-top <?php if(basename('dostavka-i-oplata.html')==basename($_SERVER['REQUEST_URI']) ) {echo 'active';}?>"
+                    href="/dostavka-i-oplata.html"><span><?php echo $text_delivery; ?></span></a></li>
+        <li class="mega-menu"><a
+                    class="level-top <?php if(basename('contact-us')==basename($_SERVER['REQUEST_URI']) ) {echo 'active';}?>"
+                    href="/contact-us/"><span><?php echo $text_contacts; ?></span></a></li>
 
-    <?php if($this->config->get('tmflavours_menubar_cb') == 1)
+        <?php if($this->config->get('tmflavours_menubar_cb') == 1)
     { echo '<li class="fl-custom-tabmenulink mega-menu"><a class="level-top"><span>'.$config->get('tmflavours_menubar_cbtitle').'</span></a><div class="level0-wrapper fl-custom-tabmenu" style="left: 0px; display: none;"><div class="container"><div class="header-nav-dropdown-wrapper clearer container">'.html_entity_decode($config->get('tmflavours_menubar_cbcontent')).'</div></div></div></li>';
     }?>
 

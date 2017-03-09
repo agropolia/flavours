@@ -72,17 +72,6 @@ class flavours_ControllerCommonFooter extends ControllerCommonFooter {
             } 
           }
 
-        $data['informations'] = array();
-        $infos = $this->model_catalog_information->getInformations();
-        // call parent method
-        foreach ($infos as $result) {
-            $data['informations'][] = array(
-                'title' => $result['title'],
-                'href' => $this->url->link('information/information', 'information_id=' . $result['information_id']),
-                'information_id' => $result['information_id']
-            );
-        }
-
         return parent::preRender( $template_buffer, $template_name, $data );
     }    
 }

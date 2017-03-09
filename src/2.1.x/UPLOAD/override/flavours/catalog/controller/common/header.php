@@ -10,6 +10,8 @@ public function preRender( $template_buffer, $template_name, &$data ) {
 
             $this->load->language( 'common/header' );
             $data['text_welcome'] = $this->language->get( 'text_welcome' );
+            $data['text_delivery'] = $this->language->get( 'text_delivery' );
+            $data['text_contacts'] = $this->language->get( 'text_contacts' );
             $data['text_menu'] = $this->language->get( 'text_menu' );
        $data['text_welcome'] = sprintf($this->language->get('text_welcome'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'));
        $data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
@@ -72,18 +74,7 @@ public function preRender( $template_buffer, $template_name, &$data ) {
             }
           }
 
-
-        $data['informations'] = array();
-        $infos = $this->model_catalog_information->getInformations();
-        // call parent method
-        foreach ($infos as $result) {
-            $data['informations'][] = array(
-                'title' => $result['title'],
-                'href' => $this->url->link('information/information', 'information_id=' . $result['information_id'])
-            );
-        }
-
-        return parent::preRender( $template_buffer, $template_name, $data );
+     return parent::preRender( $template_buffer, $template_name, $data );
     }
 
 }

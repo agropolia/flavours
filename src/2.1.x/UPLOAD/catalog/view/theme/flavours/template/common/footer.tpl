@@ -122,11 +122,8 @@ if (isset($this->request->get['route'])) {
       </li>
       <?php } ?>
 
-
-     <?php foreach ($informations as $information) { ?>
-         <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-     <?php } ?>
-
+    <li><a href="/dostavka-i-oplata.html">Доставка и оплата</a></li>
+    <li><a href="/contact-us/">Контакты</a></li>
   </ul>
 </div><!-- mobile-menu -->
 
