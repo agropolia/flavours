@@ -29,7 +29,7 @@
             <p><?php echo $_postList['description']; ?></p>
             <?php } ?>
 
-            <a class="readmore" href="<?php echo $_postList['href']; ?>">Read More</a>
+            <a class="readmore" href="<?php echo $_postList['href']; ?>"><?php echo $text_read_more; ?></a>
 
           </div>
         </div>

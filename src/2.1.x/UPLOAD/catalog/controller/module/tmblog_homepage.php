@@ -6,6 +6,7 @@ class ControllerModuleTmblogHomepage extends Controller {
 		$this->language->load('module/tmblog_homepage');
 
 		$data['heading_title'] = $this->language->get('heading_title');
+		$data['text_read_more'] = $this->language->get('text_read_more');
 		$this->load->model('tool/image');
 		$this->load->model('tmblog/category');
 		$data['articles'] = array();
