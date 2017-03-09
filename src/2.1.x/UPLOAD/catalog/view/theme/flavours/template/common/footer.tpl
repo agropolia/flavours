@@ -20,7 +20,7 @@ if (isset($this->request->get['route'])) {
     <div class="row">
     <div class="logo-brand col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="new_title">
-      <h2>Brand Logo</h2>
+      <h2>Производители</h2>
     </div>
       <div class="slider-items-products">
         <div id="brand-slider" class="product-flexslider hidden-buttons">
