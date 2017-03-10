@@ -7,11 +7,13 @@
         <div class="col-xs-12">
           <ul>
             <?php $b_i=0; $b_cnt=count($breadcrumbs); foreach ($breadcrumbs as $breadcrumb) { ?>
-            <li><?php if($b_i!=0) { ?><span>—› </span><?php } ?>
-              <?php if($b_i!=($b_cnt-1)){ ?>
-              <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-              <?php }?>
-            </li>
+              <li><?php if($b_i!=0) {?><span>—› </span><?php } ?>
+                <?php if($b_i==($b_cnt-1)){ ?>
+                <strong><?php echo $breadcrumb['text']; ?></strong><?php }
+                else { ?>
+                <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+                <?php }?>
+              </li>
             <?php $b_i++ ;} ?>
           </ul>
         </div>
