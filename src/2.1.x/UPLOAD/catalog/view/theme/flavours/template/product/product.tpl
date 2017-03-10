@@ -377,10 +377,10 @@
     <div class="product-collateral container wow bounceInUp animated">
           <!-- <div class="col-sm-12"> -->
             <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
-              <li class="active"> <a href="#product_tabs_description" data-toggle="tab"><?php echo $tab_description; ?></a> </li>
+              <li> <a href="#product_tabs_description" data-toggle="tab"><?php echo $tab_description; ?></a> </li>
               
               <?php if ($attribute_groups) { ?>
-              <li> <a href="#attribute_groups" data-toggle="tab"><?php echo $tab_attribute; ?></a> </li>
+              <li class="active"> <a href="#attribute_groups" data-toggle="tab"><?php echo $tab_attribute; ?></a> </li>
               <?php } ?>
               
               <?php if ($tags) { ?>
@@ -403,12 +403,12 @@
 
           <div id="productTabContent" class="tab-content">
             
-            <div class="tab-pane fade in active" id="product_tabs_description">
+            <div class="tab-pane fade" id="product_tabs_description">
                 <div class="std"><?php echo $description; ?></div>
             </div>
 
             <?php if ($attribute_groups) { ?>
-            <div class="tab-pane fade" id="attribute_groups">
+            <div class="tab-pane fade in active" id="attribute_groups">
               <table class="table table-bordered">
               <?php foreach ($attribute_groups as $attribute_group) { ?>
               <thead>
