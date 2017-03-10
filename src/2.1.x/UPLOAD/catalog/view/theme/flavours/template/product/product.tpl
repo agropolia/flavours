@@ -573,7 +573,7 @@
               </div>
               <?php } ?>           
               <div class="add_cart">
-                <button class="button btn-cart" type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><span>Add to Cart</span></button>
+                <button class="button btn-cart" type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><span><?php echo $button_cart; ?></span></button>
               </div>
           </div>
         </div>
