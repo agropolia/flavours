@@ -202,7 +202,7 @@
               </div><!-- category-description std -->
 
 
-         <?php if ( !$products) { ?>
+         <?php if ( !$products and !$description) { ?>
           <p><?php echo $text_empty; ?></p>
           <div class="buttons">
             <div class="pull-right"><a href="<?php echo $continue; ?>"><button type="button" class="button"><?php echo $button_continue; ?></button></a></div>
