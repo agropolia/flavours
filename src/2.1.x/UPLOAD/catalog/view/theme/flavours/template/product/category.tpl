@@ -71,6 +71,18 @@
           </div>
           <?php }  ?>
 
+              <div class="category-description std">
+                <div class="item">
+                <?php if ($thumb) { ?>
+                <img src="<?php echo $thumb; ?>">
+                <?php }?>
+
+                <?php if ($description) { ?>
+                 <div class="col-sm-12"><?php echo $description; ?></div>
+                <?php } ?>
+                </div>
+              </div><!-- category-description std -->
+
            <div class="category-products">
            
 
@@ -188,19 +200,6 @@
                 <?php } ?>
                 
           </div><!-- CATEGORY PRODUCT END -->
-
-              <div class="category-description std">
-                <div class="item">
-                <?php if ($thumb) { ?>
-                <img src="<?php echo $thumb; ?>">
-                <?php }?>
-
-                <?php if ($description) { ?>
-                 <div class="col-sm-12"><?php echo $description; ?></div>
-                <?php } ?>
-                </div>
-              </div><!-- category-description std -->
-
 
          <?php if ( !$products and !$description) { ?>
           <p><?php echo $text_empty; ?></p>
